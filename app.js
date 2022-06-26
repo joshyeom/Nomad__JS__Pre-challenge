@@ -1,16 +1,24 @@
-//#2.0
-//Welcome JS!
-//자바스크립트는 브라우저에 설치되어있다. 따로 설치할 필요가 없다.
-//브라우저 Inspect에서 Console로 바로 사용할 수 있다.
-//브라우저는 HTML을 열고 HTML은 CSS/JS를 열 수 있다.
+///console.log(); >> 변수창출, 출력
+console.log(5 + 2); //=7
 
-//#2.1
-//1. Number Type
-//1) 정수(Integer) // 1, 2, 3, 4 ...
-//2) 소수(Float) // 1.555, 2.545345 ...
-//Number타입은 서로 연산기호를 이용하여 계산할 수 있다.
+//veriable 생성
+const a = 5;
+const b = 2;
+console.log(a + b); //=7
 
-//String
-//문자(Text)로 구성되어있음
-//반드시 "" or ''가 앞뒤에 있어야함.
-//"Hello," + "everyone." = Hello, everyone.
+//Other veriable
+let c = 5;
+var d = 2;
+//always const      재선언,재할당 금지
+//sometimes let     재선언 금지, 재할당 가능
+//never var         재선언 가능, 재할당 가능
+
+let a = 5; // 위 const로 인해 불가능
+let c = 8; // 위 let 먼저 선언으로 인해 불가능
+c = 7; // let이기 때문에 재할당 가능.
+var d = 3; //var은 재선언 가능
+d = 6; //var은 재할당 가능
+
+//camelCase
+const veryVeryVeryLongName = 7;
+console.log(veryVeryVeryLongName); //=7
