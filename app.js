@@ -1,54 +1,16 @@
+//#2.0
+//Welcome JS!
+//자바스크립트는 브라우저에 설치되어있다. 따로 설치할 필요가 없다.
+//브라우저 Inspect에서 Console로 바로 사용할 수 있다.
+//브라우저는 HTML을 열고 HTML은 CSS/JS를 열 수 있다.
 
+//#2.1
+//1. Number Type
+//1) 정수(Integer) // 1, 2, 3, 4 ...
+//2) 소수(Float) // 1.555, 2.545345 ...
+//Number타입은 서로 연산기호를 이용하여 계산할 수 있다.
 
-//querySelector로 지정하기 - CSS같이 사용가능
-const h1 = document.querySelector("div.hello:first-child h1");
-
-
-//click시 설정값으로 바꾸어주는 listener
-function handleTitleClick() {
-    h1.style.color = "blue";
-}
-h1.addEventListener("click", handleTitleClick);
-
-
-//mouseenter: when mouse is entered on const-things that will be changed to settingthings.
-function handleMouseEnter() {
-    h1.innerText = "mouse is here!"
-}
-h1.addEventListener("mouseenter", handleMouseEnter);
-
-
-//mouseleave: mouseenter와 반대
-function handleMouseLeave() {
-    h1.innerText = "mouse is gone!"
-}
-h1.addEventListener("mouseleave", handleMouseLeave);
-
-
-//window-resieze: window 사이즈 변경시 설정값 적용
-//window listner는 window로 선언시작
-function handleWindowResize() {
-    document.body.style.backgroundColor = "tomato";
-}
-window.addEventListener("resize", handleWindowResize);
-
-//window"copy": window에서 copy시 설정값 적용
-function handleWindowCopy () {
-    alert("copeir!");
-}
-window.addEventListener("copy", handleWindowCopy);
-
-
-//window"offLine": 인터넷 연결 안될시 적용
-function handleWindowOffline () {
-    alert("SOS NO WIFI!");
-}
-window.addEventListener("offline", handleWindowOffline);
-
-//window"onLine": 인터넷 될 시 적용
-function handleWindowOnline () {
-    alert("All Good!");
-}
-window.addEventListener("online", handleWindowOnline);
-
-
+//String
+//문자(Text)로 구성되어있음
+//반드시 "" or ''가 앞뒤에 있어야함.
+//"Hello," + "everyone." = Hello, everyone.
