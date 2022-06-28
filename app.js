@@ -1,25 +1,22 @@
-const mon = "mon";
-const tue = "tue";
-const wed = "wed";
-const thu = "thu";
-const fri = "fri";
-const sat = "sat";
-const sun = "sun";
+//objects
+const player = {
+  name: "nico",
+  points: 10,
+  fat: true,
+};
+//선언 = {property: value,}
 
-const daysOfWeek = mon + tue + wed + thu + fri + sat + sun;
-console.log(daysOfWeek); //montuewedthufrisatsun
-//이렇게 정의하면 매우 귀찮을 뿐더러 원하는 요소를 끄집어내지 못함
-
-const daysOfWeekArrays = [mon, tue, wed, thu, fri, sat, sun];
-console.log(daysOfWeekArrays);
-//(7) ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
-//[]안에 ,로 분리
-
-// Get Item from Array
-console.log(daysOfWeekArrays[4]);
-//fri
-//모든 순서는 0부터시작 그러므로 4는 5번째 fri
-
-// Add one more day to the array
-daysOfWeekArrays.push("sunsun");
-// (8) ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun', 'sunsun']
+console.log(player);
+//fat:true
+player.fat = false;
+console.log(player);
+//fat:false
+//object 안에 내용을 수정한 것이기 때문에 const에 영향을 받지 아니함.
+player = false;
+//이 경우가 에러
+player.lastName = "potato"; //push!
+console.log(player);
+//{name: 'nico', points: 10, fat: false, lastName: 'potato'}
+player.points = player.points + 15;
+console.log(player.points);
+//25
