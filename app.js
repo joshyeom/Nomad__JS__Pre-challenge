@@ -1,25 +1,35 @@
-//retrun
-//집에 믹서가있는데, 망고를 갈아서 주스로 만들었지만, 주스를 꺼내지 못할 때, return을 쓴다.
-//이래도 뭔 개 소린지 모르겠음
-
-//return은 2가지 기능이 있는데,
-//하나는 함수로부터 데이터를 변환하는역할을 하는 것이고
-const age = 96;
-function calculateKrAge(ageOfForeigner) {
-  return ageOfForeigner + 2;
+const age = parseInt(prompt("How old are you?")); //function은 안쪽부터 실행됨 즉 prompt부터 시작
+//prompt 요즘 잘 안씀. css적용 안되고 블락당할수도 있음.
+console.log(age);
+//parseInt로 인해 prompt에서 number과 string을 구분 할 수 있게 됨.
+if (isNaN(age) || age < 0) {
+  //is not a number. string일때 true.
+  console.log("Please write a real positive number");
+} else if (age < 18) {
+  console.log("You are too young.");
+} else if (age >= 18 && age <= 50) {
+  console.log("You can drink Enjoy!!");
+} else if (age > 50 && age <= 80) {
+  console.log("You should stop to drink");
+} else if (age > 80) {
+  console.log("You can do whatever you want.");
 }
+//if = true > 작동
+//if = false > else 작동
+//if = false > else if = false > else if = true > 작동
+//true일 경우 작동하고 false 일 경우는 작동하지 않거나, 다음 conditionals로 이동
+true || true === true;
+false || true === true;
+true || false === true;
+false || false === false;
+//or은 false false일경우만 false
 
-const krAge = calculateKrAge(age);
+true && true === true;
+false && true === false;
+true && false === false;
+false && false === false;
+//and는 true true 일 경우만 true
 
-console.log(krAge); //98
-
-//두번째는 함수를 강제로 종료시키는 역할도 한다.
-const hello = "hello";
-function sayHello() {
-  "hello!";
-  return;
-  ("bye bye");
-}
-
-console.log(hello); //hello
-//byebye는 return이후 즉, 함수가 종료된 이후라 출력되지 않음.
+//= --> value를 할당
+//=== --> 같은지 확인
+//!== --> 같지 않음을 확인
