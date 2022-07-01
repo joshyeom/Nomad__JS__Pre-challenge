@@ -1,35 +1,14 @@
-const age = parseInt(prompt("How old are you?")); //function은 안쪽부터 실행됨 즉 prompt부터 시작
-//prompt 요즘 잘 안씀. css적용 안되고 블락당할수도 있음.
-console.log(age);
-//parseInt로 인해 prompt에서 number과 string을 구분 할 수 있게 됨.
-if (isNaN(age) || age < 0) {
-  //is not a number. string일때 true.
-  console.log("Please write a real positive number");
-} else if (age < 18) {
-  console.log("You are too young.");
-} else if (age >= 18 && age <= 50) {
-  console.log("You can drink Enjoy!!");
-} else if (age > 50 && age <= 80) {
-  console.log("You should stop to drink");
-} else if (age > 80) {
-  console.log("You can do whatever you want.");
-}
-//if = true > 작동
-//if = false > else 작동
-//if = false > else if = false > else if = true > 작동
-//true일 경우 작동하고 false 일 경우는 작동하지 않거나, 다음 conditionals로 이동
-true || true === true;
-false || true === true;
-true || false === true;
-false || false === false;
-//or은 false false일경우만 false
+const title = document.getElementById("title");
+//HTML의 ID element를 꺼내옴//
+console.dir(title); //h1#title.hello   ariaAtomic: null  ariaAutoComplete: null..........
+console.log(title); //<h1 autofocus="" class="hello" id="title">Grab Me!</h1>
+//dir은 객체의 속성을 출력
+//log는 객체의 코드를 출력
 
-true && true === true;
-false && true === false;
-true && false === false;
-false && false === false;
-//and는 true true 일 경우만 true
-
-//= --> value를 할당
-//=== --> 같은지 확인
-//!== --> 같지 않음을 확인
+title.innerText = "Got You!"; //Grab Me! > Got You!
+//굳이 JS로 element를 변경 및 가져오는 이유
+//html 은 정적 리소스 입니다. 사용자에게 표시할 화면을 html로 만들면 그걸로 변경할 수 없는 상태가 됩니다. 그런데, 그런 결과 화면을 상황에 따라 변경하는게 필요해 졌고, 그걸 가능하게 하는게 javascript 인 겁니다.
+//예를들어, title이 '환영합니다.' 로 만들어졌는데, 화면에서 선택하는 사용자의 이름을 표시하려 한다면, 사용자가 보고있는 화면(html)에서 선택한 이름을 추가로 표시할 수 있게 하는거죠. 그래서 '홍길동님 환영합니다.' 로 html 정보를 바꿀때 사용합니다.
+console.log(title.id); //title
+console.log(title.className); //hello
+//이로써 html에서 JS로 html을 수정,확인,출력이 가능하다는것을 알았다.
