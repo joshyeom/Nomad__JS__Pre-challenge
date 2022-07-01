@@ -1,26 +1,19 @@
 const h1 = document.querySelector(".hello h1");
 
 function handleTitleClick() {
-  h1.innerText = "mouse is here!";
+  const currentColor = h1.style.color; //현재상태의 색깔 값을 currentColor에 저장
+  let newColor; //newColor라는 새 변수 선언
+  if (currentColor === "blue") {
+    //currentColor가 blue인지 확인
+    newColor = "tomato"; //newColor = "tomato"라는 데이터값이 저장
+  } else {
+    newColor = "blue"; //currentColor === "blue"가 false 일경우 newColor는 blue
+  }
+  h1.style.color = newColor; //newColor는 if문에서 tomato를 할당받았기 때문에 newColor = "tomato" = h1.style.color
+  //h1.style.color = "tomato" = currentColor
+  //if에서 currentColor는 "tomato"라 false
+  //else에 따라 newColor="blue"
+  //그러므로 처음 값은 blue
 }
 
-h1.onmouseenter = handleTitleClick;
-//addEventListner를 사용하지않고 이렇게도 사용할 수 있다.
-//그러나, addEventListner를 사용하는것이 더 가독성이 좋고 후에 .removeEvnetLisnter를 사용할 수 있으므로, addEventListner를 사용하자!
-
-function handleWindowResize() {
-  document.body.style.backgroundColor = "tomato";
-}
-window.addEventListener("resize", handleWindowResize);
-//브라우저 사이즈를 늘이거나 줄이면 tomato로 바뀜.
-//console에서 document.body를 입력하면 바뀐값이 출력됨.
-
-function handleWindowCopy() {
-  alert("copier!");
-}
-window.addEventListener("copy", handleWindowCopy); //copy시 알람
-
-function handleWindowOffline() {
-  alert("Check your WI-FI");
-}
-window.addEventListener("offline", handleWindowOffline); //오프라인 시 알람
+h1.addEventListener("click", handleTitleClick); //첫 클릭은 blue 두 번째 클릭은 tomato
