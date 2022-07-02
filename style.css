@@ -1,3 +1,16 @@
 body {
     background-color: beige;
 }
+
+h1 {
+    color: cornflowerblue;
+}
+/*class name을 적고 JS에서 수정 가능*/
+.active {
+    color: tomato;
+}
+
+h2 {
+    color: cornflowerblue;
+    transition: color 0.5s ease-in-out;/*애니메이션도 적용되는것을 확인 할 수 있다.*/
+}
