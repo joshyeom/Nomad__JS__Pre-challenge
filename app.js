@@ -1,20 +1,17 @@
 const h1 = document.querySelector(".hello h1");
 
 function handleTitleClick() {
-  h1.className = "active"; //css에서 입력된 class 수정 가능
-}
-h1.addEventListener("click", handleTitleClick); //첫 클릭은 blue 두 번째 클릭은 tomato
-
-const h2 = document.querySelector(".hello h2");
-
-function switchColor() {
-  if (h2.className === "active") {
-    //h2.className이 active일 시
-    h2.className = ""; //h2.className = ""이 되는거고
+  const clickedClass = "clicked"; //string남발로 인한 실수와 에러를 최소화 하는 방법을 const로 선언해버리는것
+  if (h1.classList.contains(clickedClass)) {
+    h1.classList.remove(clickedClass);
   } else {
-    //아니면
-    h2.className = "active"; //h2.className = "active"이다.
-  } //그렇다면 다시 처음부터 시작
-} //그렇지만 함수안에 "action" 스트링이 2개여서 실수 및 에러의 위험이 높다.
+    h1.classList.add(clickedClass);
+  }
+}
+h1.addEventListener("click", handleTitleClick); //add와 remove로 인해 class가 생성되었다 지워졌다 하는것을 볼 수 있다.
 
-h2.addEventListener("click", switchColor); //console에서 class("active")사라졌다가 나타났다를 반복 하는것을 볼 수 있다.
+function handleTitleClick() {
+  h1.classList.toggle("clicked");
+}
+//위 다섯줄짜리 코드와 정확한 의미와 값을 가지고 있음
+//즉, toggle은 class가 존재한다면 빼주고 없다면 넣어주는 역할을 함.
