@@ -1,18 +1,19 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 
-function onLoginSubmit() {
-  const username = loginInput.value;
-  console.log("username");
-}
+const link = document.querySelector("a"); //anchor의 기본 기능은 새 페이지로 접속
 
-loginForm.addEventListener("submit", onLoginSubmit);
-//form에는 submit할때 자동으로 refresh되는 기능이 있다.
-//여기까지는 value값을 받도록 코딩되어 있지만, 받자마자 refresh 되어버림
-//그래서 우리는 이 기능을 초기화를 해야함
-
-function onLoginSubmit(event) {
-  //event라는 arugment를 object로 생성
-  event.preventDefault(); //브라우저가 기본 동작을 실행하지 못하게 막기
-  console.log(loginInput.value);
+function handleLinkClick(event) {
+  event.preventDefault();
+  console.log(event);
+  alert("clicked!");
 }
+//PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+//argument를 할당한 순간, "click"의 대한 정보가 뜸.
+//
+link.addEventListener(
+  "click",
+  handleLinkClick //나는 함수의 이름만 준것, 실행은 JS의 몫//
+);
+
+//handleLinkClick({information about the event that just happened!})
