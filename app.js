@@ -2,17 +2,18 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CLASSNAME = "hidden"; //string만 있거나, 중요한 선언은 대문자로만
+const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginSubmit(event) {
   event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
   const username = loginInput.value;
-  loginForm.classList.add(HIDDEN_CLASSNAME); //함수 실행시 "hidden"이 추가
-  console.log(username);
-  greeting.innerText = "Hello " + username; //위아래는 같은 값을 가져옴
-  greeting.innerText = `Hello ${username}`; // ``(백틱)사용, ${}를 제외한 값은 출력을 안함.
-  greeting.classList.remove(HIDDEN_CLASSNAME); //함수 실행시 "hidden"이 제거
+  localStorage.setItem("username", josh); //storage에 username(key) josh(value)를 저장
+  localStorage.getItem("username"); //불러오기
+  localStorage.removeItem("username", josh); //제거하기
+  //마찬가지로 form에 입력한 value도 storage에 저장됨.
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
-//form은 사라지고 value를 받음
