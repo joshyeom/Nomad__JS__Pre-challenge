@@ -8,9 +8,10 @@
     <title>Momenthum</title>
 </head>
 <body>
-    <div class="hello">
-        <h1>Grab me!</h1>
-        <h2>Swtich me!</h2>
+    <form id="login-form"><!--form을 써야 input이 제대로 작동-->
+        <input required maxlength ="15" type="text" placeholder="What is your name?" />
+        <!--required와 maxlength같은 기능을 적극활용하여 JS활용을 줄인다.-->
+        <button>Log In</button>
     </div>
     <script src="app.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
