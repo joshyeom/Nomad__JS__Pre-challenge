@@ -1,19 +1,18 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-const link = document.querySelector("a"); //anchor의 기본 기능은 새 페이지로 접속
+const HIDDEN_CLASSNAME = "hidden"; //string만 있거나, 중요한 선언은 대문자로만
 
-function handleLinkClick(event) {
+function onLoginSubmit(event) {
   event.preventDefault();
-  console.log(event);
-  alert("clicked!");
+  const username = loginInput.value;
+  loginForm.classList.add(HIDDEN_CLASSNAME); //함수 실행시 "hidden"이 추가
+  console.log(username);
+  greeting.innerText = "Hello " + username; //위아래는 같은 값을 가져옴
+  greeting.innerText = `Hello ${username}`; // ``(백틱)사용, ${}를 제외한 값은 출력을 안함.
+  greeting.classList.remove(HIDDEN_CLASSNAME); //함수 실행시 "hidden"이 제거
 }
-//PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
-//argument를 할당한 순간, "click"의 대한 정보가 뜸.
-//
-link.addEventListener(
-  "click",
-  handleLinkClick //나는 함수의 이름만 준것, 실행은 JS의 몫//
-);
 
-//handleLinkClick({information about the event that just happened!})
+loginForm.addEventListener("submit", onLoginSubmit);
+//form은 사라지고 value를 받음
