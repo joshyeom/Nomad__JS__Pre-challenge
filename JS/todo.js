@@ -7,7 +7,7 @@ const TODOS_KEY = "todos";
 const toDos = []; //toDos >> array
 
 function saveToDos() {
-  localStorage.setItem(TODOS_KEY, JSON.stringify(TODOS_KEY)); //JSON.stringify는 어떠한 코드든 string으로 변환 또한, string으로 되어서 중복적용도 가능.
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); //JSON.stringify는 어떠한 코드든 string으로 변환 또한, string으로 되어서 중복적용도 가능.
 }
 
 function deltedToDo(event) {
@@ -42,6 +42,7 @@ toDoForm.addEventListener("submit", handleToDoSubmint);
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos !== null) {
-  const parsedToDos = JSON.parse(savedToDos);
-  console.log(parsedToDos);
+  //일치 하지 않다면
+  const parsedToDos = JSON.parse(savedToDos); //string을 object로 바꿔줌
+  parsedToDos.forEach((item) => console.log("this is the turn of", item)); //각각의 item을 실행해줌.
 }
